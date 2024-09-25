@@ -3,7 +3,7 @@ from flask_cors import CORS
 from flask_restful import Api
 
 from modelos import db
-from vistas import VistaServicios
+from vistas import VistaServicios, VistaUsuarios
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///abcall.db'
@@ -20,3 +20,4 @@ cors = CORS(app)
 
 api = Api(app)
 api.add_resource(VistaServicios, '/servicios/<int:id_usuario>')
+api.add_resource(VistaUsuarios, '/usuario')
