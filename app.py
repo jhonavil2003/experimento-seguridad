@@ -19,5 +19,5 @@ db.create_all()
 cors = CORS(app)
 
 api = Api(app)
-api.add_resource(VistaServicios, '/servicios/<int:id_usuario>')
+api.add_resource(VistaServicios, '/servicios')
 api.add_resource(VistaUsuarios, '/usuario')

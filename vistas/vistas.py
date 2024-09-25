@@ -7,7 +7,8 @@ from modelos import UsuarioSchema, Usuario
 usuario_schema = UsuarioSchema()
 
 class VistaServicios (Resource) :
-    def get(self, id_usuario):
+    def post(self):
+        id_usuario = request.json.get("usuario", "")
         usuario = db.get_or_404(Usuario, id_usuario)
         if not usuario:
             return {"mensaje": "No existe el usuario"}, 404
